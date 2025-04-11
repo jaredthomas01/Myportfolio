@@ -24,7 +24,7 @@ let javascriptProgress = document.querySelector(".javascript"),
   javascriptValue = document.querySelector(".javascript-progress");
 
 let javascriptStartValue = 0,
-  javascriptEndValue = 75,
+  javascriptEndValue = 90,
   jsspeed = 30;
 
 let progressjs = setInterval(() => {
@@ -45,7 +45,7 @@ let phpProgress = document.querySelector(".php"),
   phpValue = document.querySelector(".php-progress");
 
 let phpStartValue = 0,
-  phpEndValue = 80,
+  phpEndValue = 82,
   phpspeed = 30;
 
 let progressphp = setInterval(() => {
@@ -66,7 +66,7 @@ let reactProgress = document.querySelector(".reactjs"),
   reactValue = document.querySelector(".reactjs-progress");
 
 let reactStartValue = 0,
-  reactEndValue = 30,
+  reactEndValue = 75,
   rjsspeed = 30;
 
 let progressreact = setInterval(() => {
@@ -81,6 +81,45 @@ let progressreact = setInterval(() => {
     clearInterval(progressreact);
   }
 }, rjsspeed);
+
+// ===== Node.js Progress =====
+let nodeProgress = document.querySelector(".nodejs"),
+  nodeValue = document.createElement("span");
+nodeValue.className = "progress-value";
+nodeValue.textContent = "0%";
+nodeProgress.appendChild(nodeValue);
+
+let nodeStartValue = 0,
+  nodeEndValue = 88,
+  nodeSpeed = 30;
+
+let progressNode = setInterval(() => {
+  nodeStartValue++;
+  nodeValue.textContent = `${nodeStartValue}%`;
+  nodeProgress.style.background = `conic-gradient(#3f396d ${nodeStartValue * 3.6}deg, #ededed 0deg)`;
+
+  if (nodeStartValue === nodeEndValue) clearInterval(progressNode);
+}, nodeSpeed);
+
+
+// ===== Java & Spring Boot Progress =====
+let springProgress = document.querySelector(".springboot"),
+  springValue = document.createElement("span");
+springValue.className = "progress-value";
+springValue.textContent = "0%";
+springProgress.appendChild(springValue);
+
+let springStartValue = 0,
+  springEndValue = 90,
+  springSpeed = 30;
+
+let progressSpring = setInterval(() => {
+  springStartValue++;
+  springValue.textContent = `${springStartValue}%`;
+  springProgress.style.background = `conic-gradient(#3f396d ${springStartValue * 3.6}deg, #ededed 0deg)`;
+
+  if (springStartValue === springEndValue) clearInterval(progressSpring);
+}, springSpeed);
 
 
 // filter using javascript
